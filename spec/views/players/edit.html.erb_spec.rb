@@ -5,7 +5,6 @@ RSpec.describe "players/edit", type: :view do
     Player.create!(
       name: "MyString",
       display_name: "MyString",
-      string: "MyString",
       use_display_name: false
     )
   }
@@ -22,8 +21,6 @@ RSpec.describe "players/edit", type: :view do
       assert_select "input[name=?]", "player[name]"
 
       assert_select "input[name=?]", "player[display_name]"
-
-      assert_select "input[name=?]", "player[string]"
 
       assert_select "input[name=?]", "player[use_display_name]"
     end

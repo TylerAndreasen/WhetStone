@@ -5,7 +5,6 @@ RSpec.describe "players/new", type: :view do
     assign(:player, Player.new(
       name: "MyString",
       display_name: "MyString",
-      string: "MyString",
       use_display_name: false
     ))
   end
@@ -18,8 +17,6 @@ RSpec.describe "players/new", type: :view do
       assert_select "input[name=?]", "player[name]"
 
       assert_select "input[name=?]", "player[display_name]"
-
-      assert_select "input[name=?]", "player[string]"
 
       assert_select "input[name=?]", "player[use_display_name]"
     end
