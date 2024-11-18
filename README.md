@@ -12,14 +12,14 @@ Things you may want to cover:
 
 * Rails 7.1.5
 
-* System dependencies
+* System dependencies: Docker Desktop,
+
+* How to run the test suite: NYI
 
 * Configuration
 
 * Database creation
 
 * Database initialization
-
-* How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)

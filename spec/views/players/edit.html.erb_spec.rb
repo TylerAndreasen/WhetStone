@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "players/edit", type: :view do
   let(:player) {
     Player.create!(
-      name: "MyString",
+      username: "MyString",
       display_name: "MyString",
       use_display_name: false
     )
@@ -18,7 +18,7 @@ RSpec.describe "players/edit", type: :view do
 
     assert_select "form[action=?][method=?]", player_path(player), "post" do
 
-      assert_select "input[name=?]", "player[name]"
+      assert_select "input[name=?]", "player[username]"
 
       assert_select "input[name=?]", "player[display_name]"
 

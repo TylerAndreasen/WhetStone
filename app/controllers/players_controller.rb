@@ -21,7 +21,12 @@ class PlayersController < ApplicationController
 
   # POST /players or /players.json
   def create
-    @player = Player.new(player_params)
+    if (param[:display_name] == "")
+      @player = Player.new(param[:username], param[:username], false)
+      puts "CANA 601 - Seemingly successfully created new player with two copies of the username"
+    else
+      @player = Player.new(player_params)
+    end
 
     respond_to do |format|
       if @player.save
@@ -65,6 +70,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:name, :display_name, :use_display_name)
+      params.require(:player).permit(:username, :display_name, :use_display_name)
     end
 end

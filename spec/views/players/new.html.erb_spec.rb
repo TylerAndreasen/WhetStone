@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "players/new", type: :view do
   before(:each) do
     assign(:player, Player.new(
-      name: "MyString",
+      username: "MyString",
       display_name: "MyString",
       use_display_name: false
     ))
@@ -14,7 +14,7 @@ RSpec.describe "players/new", type: :view do
 
     assert_select "form[action=?][method=?]", players_path, "post" do
 
-      assert_select "input[name=?]", "player[name]"
+      assert_select "input[name=?]", "player[username]"
 
       assert_select "input[name=?]", "player[display_name]"
 
